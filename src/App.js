@@ -6,11 +6,11 @@ import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/Home";
 import Blog from "./components/pages/Blog";
 import Contact from "./components/pages/Contact";
+import NotFound from "./components/pages/NotFound";
+import PostDetails from "./components/pages/PostDetails";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100vw",
-    height: "100vh",
     backgroundColor: theme.palette.grey[300],
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
   },
@@ -32,6 +32,12 @@ const App = () => {
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/post/:id">
+              <PostDetails />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Container>
